@@ -1,0 +1,37 @@
+﻿@model UsersData.ViewModels.User.EditUserVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edytuj użytkownika</title>
+</head>
+<body>
+    <div id="Page">
+        <div id="Header">
+            <h2>Edycja użytkownika ID: @Html.DisplayFor(model => model.ID)</h2>
+        </div>
+        @Html.ValidationSummary()
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.FName):
+                    @Html.EditorFor(model => model.FName)
+                </div>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.LName):
+                    @Html.EditorFor(model => model.LName)
+                </div>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.Age):
+                    @Html.EditorFor(model => model.Age)
+                </div>
+                <input type="submit" value="Zatwierdź" />
+            }
+
+        <div id="Return">@Html.ActionLink("Powrót do menu", "ListUsers")</div>
+        </div>       
+</body>
+</html>

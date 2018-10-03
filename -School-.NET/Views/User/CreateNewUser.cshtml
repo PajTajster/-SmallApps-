@@ -1,0 +1,34 @@
+﻿@model UsersData.ViewModels.User.CreateNewUserVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stwórz nowego użytkownika</title>
+</head>
+<body>
+    <div id="Page">
+        <div id="Header">
+            <h2>Dodanie nowego użytkownika</h2>
+        </div>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div id="Detail">
+                @Html.DisplayNameFor(model => model.FName): @Html.EditorFor(model => model.FName)
+            </div>
+            <div id="Detail">
+                @Html.DisplayNameFor(model => model.LName): @Html.EditorFor(model => model.LName)
+            </div>
+            <div id="Detail">
+                @Html.DisplayNameFor(model => model.Age): @Html.EditorFor(model => model.Age)
+            </div>
+            <input type="submit" value="Zatwierdź" />
+        }
+
+        <div id="Return">@Html.ActionLink("Powrót do menu", "ListUsers")</div>
+    </div>
+</body>
+</html>

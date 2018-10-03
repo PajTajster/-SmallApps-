@@ -1,0 +1,52 @@
+﻿@model UsersData.ViewModels.User.DetailsUserVM
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Szczegóły</title>
+    </head>
+
+    <body>
+        <div id="Page">
+            <div id="Header">
+                <h2>Szczegóły użytkownika ID:@Html.DisplayFor(model => model.ID)</h2>
+            </div>
+            <p>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.ID):
+                </div>
+
+                @Html.DisplayFor(model => model.ID)
+            </p>
+            <p>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.FName):
+                </div>
+
+                @Html.DisplayFor(model => model.FName)
+            </p>
+            <p>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.LName):
+                </div>
+
+                @Html.DisplayFor(model => model.LName)
+            </p>
+            
+            <p>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.Age):
+                </div>
+
+                @Html.DisplayFor(model => model.Age)
+            </p>
+            
+
+            <div id="Return">
+                @Html.ActionLink("Powrót do menu", "ListUsers")
+            </div>
+        </div>
+    </body>
+</html>

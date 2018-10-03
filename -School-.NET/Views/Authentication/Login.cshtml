@@ -1,0 +1,32 @@
+﻿@model UsersData.ViewModels.Authentication.LoginVM
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Zaloguj się</title>
+</head>
+<body>
+    <div id="Page">
+        <div id="Header">
+            <h2>Logowanie</h2>
+        </div>
+        @Html.ValidationMessage("CredentialError")
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.Username):
+                    @Html.EditorFor(model => model.Username)
+                </div>
+                <div id="Detail">
+                    @Html.DisplayNameFor(model => model.Password)
+                    @Html.EditorFor(model => model.Password)
+                </div>
+                <input type="submit" value="Zatwierdź" />
+            }
+        <div id="Return">@Html.ActionLink("Powrót do menu", "ListUsers")</div>
+    </div>
+</body>
+</html>

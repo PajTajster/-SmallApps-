@@ -1,0 +1,44 @@
+﻿body {
+    background: #76c2e4;
+}
+th, td{
+    padding: 8px;
+}
+td{
+    text-align: center;
+}
+th {
+    border-style: none none groove none;
+}
+#Page {
+    background: white;
+    border-radius: 25px;
+    padding: 1em;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-style: groove;
+    border-color: slategray;
+}
+#Header {
+    background: #acd1e1;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+#Add{
+    font-weight: bold;
+}
+#Detail{
+    display:inline;
+    font-weight: bold;
+    margin-right: 5px;
+}
+#Return{
+    padding: 15px;
+}

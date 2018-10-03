@@ -1,0 +1,48 @@
+﻿@model IEnumerable<UsersData.ViewModels.User.ListUsersVM>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Spis Użytkowników</title>
+    </head>
+
+    <body>
+        <div id="Page">
+            <div id="Header">
+                <h2>Lista Użytkowników</h2>
+            </div>
+            <div id="Add">
+                @Html.ActionLink("Dodaj", "CreateNewUser")
+            </div>
+            <table>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.ID)</th>
+                    <th>@Html.DisplayNameFor(model => model.ShowName)</th>
+                    <th>@Html.DisplayNameFor(model => model.Age)</th>
+                    <th>Działania</th>
+                </tr>
+                @if (Model != null)
+                {
+                    foreach (var u in Model)
+                    {
+                        if (u == null)
+                        {
+                            break;
+                        }
+                        <tr>
+                            <td style="font-weight: @u.BoldAge">@Html.DisplayFor(m => u.ID)</td>
+                            <td style="font-weight: @u.BoldAge">
+                                @Html.DisplayFor(model => u.LName)
+                                @Html.DisplayFor(model => u.FName)
+                            </td>
+                            <td style="color: @u.HighLightAge; font-weight: @u.BoldAge">@Html.DisplayFor(model => u.Age)</td>
+                            <td>@Html.ActionLink("Szczegóły", "UserDetails", new { id = u.ID }) @Html.ActionLink("Edytuj", "EditUser", new { id = u.ID }) @Html.ActionLink("Usuń", "DeleteUser", u)</td>
+                       </tr>
+                    }
+                }
+            </table>
+        </div>
+    </body>
+</html>
